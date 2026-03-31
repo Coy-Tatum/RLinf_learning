@@ -10,45 +10,8 @@
 
 ## 📊 技术架构逻辑全景图
 
-```mermaid
-graph TD
-    %% 定义样式
-    classDef nightmare fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#c62828;
-    classDef key_tech fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#1565c0;
-    classDef core_concept fill:#f1f8e9,stroke:#558b2f,stroke-width:2px,color:#558b2f;
-    classDef hardware fill:#fffde7,stroke:#fbc02d,stroke-width:2px,color:#fbc02d;
-
-    subgraph Nightmares [真实世界：物理噩梦]
-        N1[重置成本极高]:::nightmare
-        N2[收集效率断崖下跌]:::nightmare
-        N3[物理时间延迟]:::nightmare
-    end
-
-    subgraph Solution1 [破解一：异步环境执行]
-        T1[中央调度枢纽 GPU]:::key_tech
-        H1[机器人1-复位中]:::hardware
-        H2[机器人2-运行中]:::hardware
-        T1 -- 算力重分配 --> H2
-        N1 & N2 --> T1
-    end
-
-    subgraph Solution2 [破解二：异步数据流]
-        RB[经验回放池 Replay Buffer]:::core_concept
-        Brain[共享中央大脑 VLA]:::key_tech
-        H2 -- 边运动边注水 --> RB
-        RB -- 随时抽水更新 --> Brain
-        Brain -- 知识共享 --> T1
-    end
-
-    subgraph Solution3 [破解三：动作分块]
-        T3[Action Chunking]:::key_tech
-        Input[思考 0.5s]:::core_concept
-        Output[预测未来 50 步序列]:::core_concept
-        N3 --> T3
-        T3 --> Input --> Output
-        Output -- 隐藏延迟 --> Motor[电机平滑执行]:::core_concept
-    end
 ```
+<img width="1925" height="1416" alt="1" src="https://github.com/user-attachments/assets/29bf51e2-e93e-4de7-a3f2-da0d2818c3f5" />
 
 ---
 
